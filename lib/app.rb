@@ -29,7 +29,7 @@ class App
 
   def run
     @list_options.each do |option|
-      puts option
+      puts option.center(50, '-')
     end
 
     choice = gets.chomp.to_i
