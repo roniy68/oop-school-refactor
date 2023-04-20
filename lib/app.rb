@@ -29,7 +29,7 @@ class App
 
   def run
     @list_options.each do |option|
-      puts option
+      puts option.center(50, '-')
     end
 
     choice = gets.chomp.to_i
@@ -37,13 +37,9 @@ class App
     case choice
 
     when 1, 2, 3
-
       switch(choice)
-
     when 4, 5, 6, 7
-
       switch_rental(choice)
-
     end
   end
 end

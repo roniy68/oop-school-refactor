@@ -7,7 +7,7 @@
   <img src="readme-assets/murple_logo.png" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h3><b>OOP-School</b></h3>
+  <h3><b>OOP-School-refactor</b></h3>
 
 </div>
 
@@ -15,7 +15,7 @@
 
 ## 📑 Table of Contents
 
-- [📊 OOP-School ](#-OOP-School-)
+- [📊 OOP-School-refactor ](#-OOP-School-refactor-)
   - [🛠 Built With ](#-built-with-)
     - [🧰 Tech Stack ](#-tech-stack-)
     - [💎 Key Features ](#-key-features-)
@@ -74,8 +74,8 @@ In order to run this project you need [Node.js](https://nodejs.org/en/) installe
 Clone this repository to your desired folder:
 
 ```sh
-  git clone https://github.com/roniy68/oop-school
-  cd oop-school
+  git clone https://github.com/roniy68/oop-school-refactor
+  cd oop-school-refactor
 ```
 
 ### Install
@@ -126,11 +126,15 @@ I am always looking for ways to improve my project. If you have any suggestions 
 
 - **_[Ahmed Hasan Rony](https://github.com/roniy68)_**
 
+👤 **Rabecca Nabwire**
+
+- **_[Rabecca Nabwire](https://github.com/becky449)_**
+
 ## 🤝 Contributing <a name="contributing"></a>
 
 I welcome any and all contributions to my website! If you have an idea for a new feature or have found a bug, please open an issue or submit a pull request.
 
-Feel free to check the [issues page](https://github.com/roniy68/oop-school/issues).
+Feel free to check the [issues page](https://github.com/roniy68/oop-school-refactor/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
