@@ -1,9 +1,14 @@
-# Description: List all books in the library
+# Description: Load & List all books in the library
 
-def list_books(books)
-  books.each_with_index do |book, _index|
-    puts "Title: '#{book.title.capitalize}', Author: #{book.author.capitalize}"
+require "./list_items"
+require "json"
+
+class ListBooks < List
+  def list(books)
+    if books.empty?
+      puts "No books found"
+    else
+      books.each { |book| puts "Title: \"#{book.title}\", Author: #{book.author}" }
+    end
   end
-
-  puts 'No books in the library, create some.'
 end

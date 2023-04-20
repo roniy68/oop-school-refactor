@@ -1,16 +1,18 @@
-def list_people(people)
-  puts 'All people:'
+require './list_items'
+require './student'
+require './teacher'
+class ListPeople < List
+  def show_person(person)
+    print "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+    puts ", Specialization: #{person.specialization}" if person.instance_of?(Teacher)
+    puts ", Classroom: #{person.classroom}" if person.instance_of?(Student)
+  end
 
-  if people.length.positive?
-
-    people.each do |person|
-      if person.respond_to?('specialization')
-        puts "[TEACHER] Name: #{person.name.capitalize}, ID: #{person.id}, Age: #{person.age} }"
-      else
-        puts "[STUDENT] Name: #{person.name.capitalize}, ID: #{person.id}, Age: #{person.age} }"
-      end
+  def list(people)
+    if people.empty?
+      puts 'No people found'
+    else
+      people.each { |person| show_person(person) }
     end
-  else
-    puts 'No people in the school, create some.'
   end
 end
