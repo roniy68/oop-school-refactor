@@ -1,5 +1,5 @@
-require_relative 'lib/welcome'
-require_relative 'lib/app'
+
+require_relative './app'
 
 list_options = ['1 - List all books', '2 - List all people', '3 - Create a person', '4 - Create a book',
 

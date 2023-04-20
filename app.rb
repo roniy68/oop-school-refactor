@@ -12,11 +12,16 @@ require_relative 'create_rental'
 
 require_relative 'switch'
 
+require_relative './lib/storeData'
+
 puts 'Welcome to School Library'
 
 puts 'Please choose an option by entering a number:'
 
 class App
+  
+  attr_reader :books, :people, :rentals
+
   def initialize(list_options)
     @books = []
 
