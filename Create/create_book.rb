@@ -1,17 +1,13 @@
-require_relative 'book'
+require_relative 'create'
+require './book'
 
-def create_book
-  print 'Enter book title:  '
-
-  title = gets.chomp
-
-  print 'Enter book author:  '
-
-  author = gets.chomp
-
-  book = Book.new(title, author)
-
-  @books << book
-
-  puts "Book created: #{book.title} by #{book.author}"
+class CreateBook < Create
+  def create(books)
+    print 'Title: '
+    title = gets.chomp
+    print 'Author: '
+    author = gets.chomp
+    books.push(Book.new(title, author))
+    puts 'Book created successfully'
+  end
 end
