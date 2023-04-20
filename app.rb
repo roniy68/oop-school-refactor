@@ -1,19 +1,19 @@
-require "./book"
-require "./person"
-require "./student"
-require "./teacher"
-require "./Create/create"
-require "./Create/create_book"
-require "./rental"
-require "./welcome"
-require "./list_books"
-require "./list_people"
-require "./list_rentals"
-require "./Create/create_person"
-require "./Create/create_rental"
-require "./Save/book_storage"
-require "./Save/rental_storage"
-require "./Save/people_storage"
+require './book'
+require './person'
+require './student'
+require './teacher'
+require './Create/create'
+require './Create/create_book'
+require './rental'
+require './welcome'
+require './list_books'
+require './list_people'
+require './list_rentals'
+require './Create/create_person'
+require './Create/create_rental'
+require './Save/book_storage'
+require './Save/rental_storage'
+require './Save/people_storage'
 
 class App
   def initialize()
@@ -43,25 +43,25 @@ class App
       @welcome.menu
       option = gets.chomp
       case option
-      when "1"
+      when '1'
         @list_books.list(@books)
-      when "2"
+      when '2'
         @list_people.list(@people)
-      when "3"
+      when '3'
         @create_person.input_person_info(@people)
-      when "4"
+      when '4'
         @create_books.create(@books)
-      when "5"
+      when '5'
         @create_rental.create(@rentals, @books, @people, @list_people)
-      when "6"
+      when '6'
         @list_rentals.list(@rentals)
-      when "7", "q", "quit"
+      when '7', 'q', 'quit'
         quit
         break
       end
     end
 
-    puts "Thank you for using this app!"
+    puts 'Thank you for using this app!'
   end
 
   # rubocop:enable Metrics/MethodLength
