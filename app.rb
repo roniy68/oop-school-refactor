@@ -1,49 +1,69 @@
-require "create_book"
-
-require "create_person"
-
-require "list_books"
-
-require "list_people"
-
-require "list_rental_by_id"
-
-require "create_rental"
-
-require "switch"
-
-require "./lib/storeData"
-
-puts "Welcome to School Library"
-
-puts "Please choose an option by entering a number:"
+require "./book"
+require "./person"
+require "./student"
+require "./teacher"
+require "./Create/create"
+require "./Create/create_book"
+require "./rental"
+require "./welcome"
+require "./list_books"
+require "./list_people"
+require "./list_rentals"
+require "./Create/create_person"
+require "./Create/create_rental"
+require "./Save/book_storage"
+require "./Save/rental_storage"
+require "./Save/people_storage"
 
 class App
-  attr_reader :books, :people, :rentals
-
-  def initialize(list_options)
-    @books = []
-
-    @people = []
-
-    @rentals = []
-
-    @list_options = list_options
+  def initialize()
+    @books = BookStorage.fetch
+    @people = PeopleStorage.fetch
+    @rentals = RentalStorage.fetch
+    @welcome = Welcome.new
+    @list_books = ListBooks.new
+    @list_people = ListPeople.new
+    @list_rentals = ListRentals.new
+    @create_books = CreateBook.new
+    @create_person = CreatePerson.new
+    @create_rental = CreateRental.new
   end
 
+  def quit
+    BookStorage.save(@books)
+    RentalStorage.save(@rentals)
+    PeopleStorage.save(@people)
+  end
+
+  # rubocop:disable Metrics/MethodLength
+  # rubocop:disable Metrics/CyclomaticComplexity
   def run
-    @list_options.each do |option|
-      puts option.center(50, "-")
+    @welcome.welcome
+    loop do
+      @welcome.menu
+      option = gets.chomp
+      case option
+      when "1"
+        @list_books.list(@books)
+      when "2"
+        @list_people.list(@people)
+      when "3"
+        @create_person.input_person_info(@people)
+      when "4"
+        @create_books.create(@books)
+      when "5"
+        @create_rental.create(@rentals, @books, @people, @list_people)
+      when "6"
+        @list_rentals.list(@rentals)
+      when "7", "q", "quit"
+        quit
+        break
+      end
     end
 
-    choice = gets.chomp.to_i
-
-    case choice
-
-    when 1, 2, 3
-      switch(choice)
-    when 4, 5, 6, 7
-      switch_rental(choice)
-    end
+    puts "Thank you for using this app!"
   end
+
+  # rubocop:enable Metrics/MethodLength
+  # rubocop:enable Metrics/CyclomaticComplexity
 end
