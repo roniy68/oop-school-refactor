@@ -1,16 +1,16 @@
-require_relative "create_book"
+require "create_book"
 
-require_relative "create_person"
+require "create_person"
 
-require_relative "list_books"
+require "list_books"
 
-require_relative "list_people"
+require "list_people"
 
-require_relative "list_rental_by_id"
+require "list_rental_by_id"
 
-require_relative "create_rental"
+require "create_rental"
 
-require_relative "switch"
+require "switch"
 
 require "./lib/storeData"
 
