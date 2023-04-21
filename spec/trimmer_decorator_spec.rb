@@ -10,7 +10,7 @@ describe TrimmerDecorator do
       expect(decorator.correct_name).to eq('John')
     end
   end
-  
+
   describe '#correct_name=' do
     it 'should set the correct name' do
       person.name = 'David Smith'

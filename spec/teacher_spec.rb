@@ -3,11 +3,11 @@ require './teacher'
 
 describe Teacher do
   before(:each) do
-    @teacher = Teacher.new(20, 'Roniy', nil, 'Software Engineering')
+    @teacher = Teacher.new(20, 'Michael', nil, 'Software Engineering')
   end
 
   it 'should create a new teacher' do
-    teacher = Teacher.new(20, 'Roniy', nil, 'Software Engineering')
+    teacher = Teacher.new(20, 'Michael', nil, 'Software Engineering')
     expect(teacher.class.name).to eq('Teacher')
   end
 

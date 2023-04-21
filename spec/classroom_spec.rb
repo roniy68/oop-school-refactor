@@ -3,7 +3,7 @@ require_relative '../student'
 
 describe Classroom do
   let(:classroom) { Classroom.new('Math') }
-  let(:student) { Student.new(25, 'Roniy', 1, 'Math') }
+  let(:student) { Student.new(18, 'John Doe', 1, 'Math') }
 
   describe '#add_student' do
     it 'Adds a student to the classroom' do

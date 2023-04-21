@@ -4,8 +4,8 @@ require_relative '../book'
 require_relative '../rental'
 
 describe Rental do
-  let(:student) { Student.new(22, 'Roniy', 1, 'Math') }
-  let(:teacher) { Teacher.new(30, 'Rebecca', 2, 'Math') }
+  let(:student) { Student.new(18, 'John', 1, 'Math') }
+  let(:teacher) { Teacher.new(30, 'David', 2, 'Math') }
   let(:book) { Book.new('The Great Gatsby', 'F. Scott Fitzgerald') }
 
   describe '#new' do
