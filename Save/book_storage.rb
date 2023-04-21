@@ -27,7 +27,7 @@ class BookStorage < Storage
 
     File.write('./data/books.json', JSON.pretty_generate(BookStorage.books))
   end
-  
+
   def self.serialize(book)
     {
       title: book.title,
