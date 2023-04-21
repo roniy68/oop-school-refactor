@@ -21,6 +21,7 @@ class PeopleStorage < Storage
   def self.save(people)
     people.each do |person|
       PeopleStorage.people.push(serialize(person))
+      Dir.mkdir('./data') unless Dir.exist?('./data')
     end
 
     File.write('./data/people.json', JSON.pretty_generate(PeopleStorage.people))

@@ -5,6 +5,7 @@ class Storage
 
   def save(_item)
     raise Error 'Not implemented'
+    Dir.mkdir('./data') unless Dir.exist?('./data')
   end
 
   def serialize(_item)

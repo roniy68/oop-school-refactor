@@ -23,10 +23,13 @@ class RentalStorage < Storage
   def self.save(rentals)
     rentals.each do |rental|
       RentalStorage.rentals.push(serialize(rental))
+      Dir.mkdir('./data') unless Dir.exist?('./data')
     end
-
+    
     File.write('./data/rentals.json', JSON.pretty_generate(RentalStorage.rentals))
   end
+
+
 
   def self.serialize(rental)
     {

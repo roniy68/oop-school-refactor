@@ -20,13 +20,14 @@ class BookStorage < Storage
   end
 
   def self.save(books)
+    Dir.mkdir('./data') unless Dir.exist?('./data')
     books.each do |book|
       BookStorage.books.push(serialize(book))
     end
 
     File.write('./data/books.json', JSON.pretty_generate(BookStorage.books))
   end
-
+  
   def self.serialize(book)
     {
       title: book.title,
