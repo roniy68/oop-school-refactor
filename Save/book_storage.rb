@@ -20,7 +20,7 @@ class BookStorage < Storage
   end
 
   def self.save(books)
-    FileUtils.mkdir_p('./data') unless File.directory?('./data')
+    FileUtils.mkdir_p('./data')
     books.each do |book|
       BookStorage.books.push(serialize(book))
     end
